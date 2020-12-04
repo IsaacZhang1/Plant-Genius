@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		EB18FA862566F0BA0036E33F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FA852566F0BA0036E33F /* AppDelegate.swift */; };
 		EB18FA882566F0BA0036E33F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FA872566F0BA0036E33F /* SceneDelegate.swift */; };
-		EB18FA8A2566F0BA0036E33F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FA892566F0BA0036E33F /* ContentView.swift */; };
+		EB18FA8A2566F0BA0036E33F /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FA892566F0BA0036E33F /* MainScreenView.swift */; };
 		EB18FA8C2566F0BC0036E33F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB18FA8B2566F0BC0036E33F /* Assets.xcassets */; };
 		EB18FA8F2566F0BC0036E33F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB18FA8E2566F0BC0036E33F /* Preview Assets.xcassets */; };
 		EB18FA922566F0BC0036E33F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB18FA902566F0BC0036E33F /* LaunchScreen.storyboard */; };
 		EB18FA9D2566F0BC0036E33F /* Plant_GeniusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FA9C2566F0BC0036E33F /* Plant_GeniusTests.swift */; };
 		EB18FAA82566F0BC0036E33F /* Plant_GeniusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FAA72566F0BC0036E33F /* Plant_GeniusUITests.swift */; };
+		EB18FAB625692FDD0036E33F /* PlantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FAB525692FDD0036E33F /* PlantDetailView.swift */; };
+		EB18FAB8256935100036E33F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FAB7256935100036E33F /* Coordinator.swift */; };
+		EB7A165C2579BB1A00A80919 /* PlantList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB7A165A2579BB1A00A80919 /* PlantList.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,7 @@
 		EB18FA822566F0BA0036E33F /* Plant Genius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plant Genius.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB18FA852566F0BA0036E33F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB18FA872566F0BA0036E33F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EB18FA892566F0BA0036E33F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EB18FA892566F0BA0036E33F /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		EB18FA8B2566F0BC0036E33F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB18FA8E2566F0BC0036E33F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB18FA912566F0BC0036E33F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		EB18FAA32566F0BC0036E33F /* Plant GeniusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Plant GeniusUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB18FAA72566F0BC0036E33F /* Plant_GeniusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant_GeniusUITests.swift; sourceTree = "<group>"; };
 		EB18FAA92566F0BC0036E33F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB18FAB525692FDD0036E33F /* PlantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailView.swift; sourceTree = "<group>"; };
+		EB18FAB7256935100036E33F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EB7A165B2579BB1A00A80919 /* PlantList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlantList.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +107,10 @@
 			children = (
 				EB18FA852566F0BA0036E33F /* AppDelegate.swift */,
 				EB18FA872566F0BA0036E33F /* SceneDelegate.swift */,
-				EB18FA892566F0BA0036E33F /* ContentView.swift */,
+				EB7A165A2579BB1A00A80919 /* PlantList.xcdatamodeld */,
+				EB18FA892566F0BA0036E33F /* MainScreenView.swift */,
+				EB18FAB7256935100036E33F /* Coordinator.swift */,
+				EB18FAB525692FDD0036E33F /* PlantDetailView.swift */,
 				EB18FA8B2566F0BC0036E33F /* Assets.xcassets */,
 				EB18FA902566F0BC0036E33F /* LaunchScreen.storyboard */,
 				EB18FA932566F0BC0036E33F /* Info.plist */,
@@ -268,8 +277,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB18FA862566F0BA0036E33F /* AppDelegate.swift in Sources */,
+				EB18FAB625692FDD0036E33F /* PlantDetailView.swift in Sources */,
+				EB18FAB8256935100036E33F /* Coordinator.swift in Sources */,
+				EB7A165C2579BB1A00A80919 /* PlantList.xcdatamodeld in Sources */,
 				EB18FA882566F0BA0036E33F /* SceneDelegate.swift in Sources */,
-				EB18FA8A2566F0BA0036E33F /* ContentView.swift in Sources */,
+				EB18FA8A2566F0BA0036E33F /* MainScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +606,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EB7A165A2579BB1A00A80919 /* PlantList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EB7A165B2579BB1A00A80919 /* PlantList.xcdatamodel */,
+			);
+			currentVersion = EB7A165B2579BB1A00A80919 /* PlantList.xcdatamodel */;
+			path = PlantList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EB18FA7A2566F0BA0036E33F /* Project object */;
 }
