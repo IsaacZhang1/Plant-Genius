@@ -2,15 +2,18 @@ import SwiftUI
 
 class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var isCoordinatorShown: Bool
     @Binding var imageInCoordinator: Image?
-    @Binding var listOfPlantImages: [PlantImage]
+    @ObservedObject var listOfPlantImages: PlantImages
+    var plant: Plant
     
-    init(isShown: Binding<Bool>, image: Binding<Image?>, listOfPlantImages: Binding<[PlantImage]>) {
-        print("iz: inside Coordinator init")
+    init(isShown: Binding<Bool>, image: Binding<Image?>, listOfPlantImages: PlantImages, plant: Plant) {
+        print("iz: inside Coordinator init with isShown of \(isShown)")
         _isCoordinatorShown = isShown
         _imageInCoordinator = image
-        _listOfPlantImages = listOfPlantImages
+        self.plant = plant
+        self.listOfPlantImages = listOfPlantImages
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
@@ -20,7 +23,8 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
         guard let unwrapImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
         imageInCoordinator = Image(uiImage: unwrapImage)
         if let image = imageInCoordinator {
-            listOfPlantImages.append(PlantImage(image: image))
+            let day = String(listOfPlantImages.images.count)
+            listOfPlantImages.images.append(PlantImage(name: "Day " + day, image: image))
         }
         isCoordinatorShown = false
     }
@@ -28,4 +32,5 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         isCoordinatorShown = false
     }
+    
 }

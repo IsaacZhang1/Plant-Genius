@@ -8,83 +8,78 @@
 
 import SwiftUI
 
-//struct ImageModel: Identifiable {
-//    let id: Int
-//    let imageView: String
-//}
-//
-//struct ImageView: View {
-//    let postImages: ImageModel
-//    var body: some View {
-//        Image(postImages.imageView)
-//            .resizable()
-//            .frame(width: 100, height: 100)
-//            .clipShape(Circle())
-//    }
-//}
-
-struct PlantImage {
+struct PlantImage: Identifiable {
     let id = UUID()
+    var name: String
     var image: Image
+}
+
+class PlantImages: ObservableObject {
+    @Published var images: [PlantImage] = [PlantImage]();
+    
+    init(images: [PlantImage]) {
+        self.images = images
+    }
+    
+    func printImages() {
+        print("the images are: \(images)")
+    }
 }
 
 struct PlantDetailView: View {
     var plant: Plant
     @State var image: Image? = nil
     @State var showCaptureImageView: Bool = false
-//    @State var plantImages = PlantImages(id: 0, images: [])
-    @State var listOfPlantImages: [PlantImage] = [PlantImage]()
+    @ObservedObject var listOfPlantImages: PlantImages = PlantImages(images: [])
 
     var body: some View {
         NavigationView {
             ZStack {
               VStack {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(listOfPlantImages, id: \.id) { post in
-                            ForEach(0..<3) { _ in
-    //                            ImageView(postImages: post)
-                            }
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack {
+                        ForEach(listOfPlantImages.images) { post in
+                            Text(post.name)
+                            post.image.resizable()
+                                    .frame(width: CGFloat(250), height: CGFloat(250))
+                                  .clipShape(Circle())
+                                    .overlay(Circle().stroke(Color.white, lineWidth: CGFloat(4)))
+                                    .shadow(radius: CGFloat(10))
+                            self.Print("inside of For Each - listOfPlantImages is: \(self.listOfPlantImages)" )
                         }
+                        Print("inside of the ScrollView - listOfPlantImages is: \(listOfPlantImages)")
+                        Spacer()
                     }
-                    Spacer()
                 }
                 Button(action: {
                   self.showCaptureImageView.toggle()
                 }) {
                   Text("Take picture")
                 }
-    //            image?.resizable()
-    //                .frame(width: CGFloat(250), height: CGFloat(200))
-    //              .clipShape(Circle())
-    //                .overlay(Circle().stroke(Color.white, lineWidth: CGFloat(4)))
-    //                .shadow(radius: CGFloat(10))
               }
               if (showCaptureImageView) {
-                Print("iz: before CaptureImageView")
-                CaptureImageView(isShown: $showCaptureImageView, image: $image, listOfPlantImages: $listOfPlantImages)
+                Print("iz: before CaptureImageView with showCaptureImageView of \(showCaptureImageView)")
+                CaptureImageView(isShown: $showCaptureImageView, image: $image, listOfPlantImages: listOfPlantImages, plant: plant)
               }
             }
-        }
-        
+        }.navigationBarTitle(Text(plant.name!))
    }
 }
 
 
 struct CaptureImageView {
     @Binding var isShown: Bool
-      @Binding var image: Image?
-      @Binding var listOfPlantImages: [PlantImage]
+    @Binding var image: Image?
+    @ObservedObject var listOfPlantImages: PlantImages
+    var plant: Plant
   
     func makeCoordinator() -> Coordinator {
-        Print("iz: inside makeCoordinator")
-        return Coordinator(isShown: $isShown, image: $image, listOfPlantImages: $listOfPlantImages)
+        return Coordinator(isShown: $isShown, image: $image, listOfPlantImages: listOfPlantImages, plant: plant)
     }
 }
 
 extension CaptureImageView: UIViewControllerRepresentable {
     func makeUIViewController(context: UIViewControllerRepresentableContext<CaptureImageView>) -> UIImagePickerController {
-        Print("iz: inside makeUIViewController")
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         picker.sourceType = .camera
