@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14AD5E47A20DD9BC7CDECF00 /* Pods_Plant_Genius_Plant_GeniusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37AAF471DCF6C18EE795429 /* Pods_Plant_Genius_Plant_GeniusUITests.framework */; };
+		A5B395E8A08012C0F8220AF2 /* Pods_Plant_Genius.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E1AAA60A66DF9F45C939F3 /* Pods_Plant_Genius.framework */; };
 		EB18FA862566F0BA0036E33F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FA852566F0BA0036E33F /* AppDelegate.swift */; };
 		EB18FA882566F0BA0036E33F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FA872566F0BA0036E33F /* SceneDelegate.swift */; };
 		EB18FA8A2566F0BA0036E33F /* PlantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FA892566F0BA0036E33F /* PlantList.swift */; };
@@ -17,9 +19,11 @@
 		EB18FAA82566F0BC0036E33F /* Plant_GeniusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FAA72566F0BC0036E33F /* Plant_GeniusUITests.swift */; };
 		EB18FAB625692FDD0036E33F /* PlantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FAB525692FDD0036E33F /* PlantDetailView.swift */; };
 		EB18FAB8256935100036E33F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FAB7256935100036E33F /* Coordinator.swift */; };
+		EB3F3B48257EC4B90026AE60 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB3F3B47257EC4B90026AE60 /* Auth0.plist */; };
 		EB7A165C2579BB1A00A80919 /* PlantList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB7A165A2579BB1A00A80919 /* PlantList.xcdatamodeld */; };
 		EB7A16622579C01400A80919 /* PlantRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A16612579C01400A80919 /* PlantRow.swift */; };
 		EB7A166A2579C12200A80919 /* AddPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A16692579C12200A80919 /* AddPlant.swift */; };
+		FD443820010281F6CF6C2FFB /* Pods_Plant_GeniusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA74408397B663092FCA6D /* Pods_Plant_GeniusTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36AA74408397B663092FCA6D /* Pods_Plant_GeniusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plant_GeniusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FEEC576C28921FBC7E5DCA5 /* Pods-Plant Genius.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plant Genius.debug.xcconfig"; path = "Target Support Files/Pods-Plant Genius/Pods-Plant Genius.debug.xcconfig"; sourceTree = "<group>"; };
+		4EC8E68BD3B5B180DF313D81 /* Pods-Plant Genius-Plant GeniusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plant Genius-Plant GeniusUITests.debug.xcconfig"; path = "Target Support Files/Pods-Plant Genius-Plant GeniusUITests/Pods-Plant Genius-Plant GeniusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FE0BE6F349C31CE3BA68839 /* Pods-Plant GeniusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plant GeniusTests.debug.xcconfig"; path = "Target Support Files/Pods-Plant GeniusTests/Pods-Plant GeniusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		91E1AAA60A66DF9F45C939F3 /* Pods_Plant_Genius.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plant_Genius.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96B62DCC186CF5854A7285FC /* Pods-Plant Genius.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plant Genius.release.xcconfig"; path = "Target Support Files/Pods-Plant Genius/Pods-Plant Genius.release.xcconfig"; sourceTree = "<group>"; };
+		B37AAF471DCF6C18EE795429 /* Pods_Plant_Genius_Plant_GeniusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plant_Genius_Plant_GeniusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCC5B69561D25C75D9F65C20 /* Pods-Plant Genius-Plant GeniusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plant Genius-Plant GeniusUITests.release.xcconfig"; path = "Target Support Files/Pods-Plant Genius-Plant GeniusUITests/Pods-Plant Genius-Plant GeniusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E6C05BEC24BEB5607629A867 /* Pods-Plant GeniusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plant GeniusTests.release.xcconfig"; path = "Target Support Files/Pods-Plant GeniusTests/Pods-Plant GeniusTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB18FA822566F0BA0036E33F /* Plant Genius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plant Genius.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB18FA852566F0BA0036E33F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB18FA872566F0BA0036E33F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +69,7 @@
 		EB18FAA92566F0BC0036E33F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB18FAB525692FDD0036E33F /* PlantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailView.swift; sourceTree = "<group>"; };
 		EB18FAB7256935100036E33F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EB3F3B47257EC4B90026AE60 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		EB7A165B2579BB1A00A80919 /* PlantList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlantList.xcdatamodel; sourceTree = "<group>"; };
 		EB7A16612579C01400A80919 /* PlantRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRow.swift; sourceTree = "<group>"; };
 		EB7A16692579C12200A80919 /* AddPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlant.swift; sourceTree = "<group>"; };
@@ -66,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5B395E8A08012C0F8220AF2 /* Pods_Plant_Genius.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD443820010281F6CF6C2FFB /* Pods_Plant_GeniusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +96,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14AD5E47A20DD9BC7CDECF00 /* Pods_Plant_Genius_Plant_GeniusUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B869B1ACDE0464FAB02400D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91E1AAA60A66DF9F45C939F3 /* Pods_Plant_Genius.framework */,
+				B37AAF471DCF6C18EE795429 /* Pods_Plant_Genius_Plant_GeniusUITests.framework */,
+				36AA74408397B663092FCA6D /* Pods_Plant_GeniusTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB18FA792566F0BA0036E33F = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +120,8 @@
 				EB18FA9B2566F0BC0036E33F /* Plant GeniusTests */,
 				EB18FAA62566F0BC0036E33F /* Plant GeniusUITests */,
 				EB18FA832566F0BA0036E33F /* Products */,
+				F4315712E948D8420500F451 /* Pods */,
+				9B869B1ACDE0464FAB02400D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +145,7 @@
 				EB7A165A2579BB1A00A80919 /* PlantList.xcdatamodeld */,
 				EB18FA8B2566F0BC0036E33F /* Assets.xcassets */,
 				EB18FA902566F0BC0036E33F /* LaunchScreen.storyboard */,
+				EB3F3B47257EC4B90026AE60 /* Auth0.plist */,
 				EB18FA932566F0BC0036E33F /* Info.plist */,
 				EB18FA8D2566F0BC0036E33F /* Preview Content */,
 			);
@@ -159,6 +189,19 @@
 			path = "Main Files";
 			sourceTree = "<group>";
 		};
+		F4315712E948D8420500F451 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3FEEC576C28921FBC7E5DCA5 /* Pods-Plant Genius.debug.xcconfig */,
+				96B62DCC186CF5854A7285FC /* Pods-Plant Genius.release.xcconfig */,
+				4EC8E68BD3B5B180DF313D81 /* Pods-Plant Genius-Plant GeniusUITests.debug.xcconfig */,
+				CCC5B69561D25C75D9F65C20 /* Pods-Plant Genius-Plant GeniusUITests.release.xcconfig */,
+				7FE0BE6F349C31CE3BA68839 /* Pods-Plant GeniusTests.debug.xcconfig */,
+				E6C05BEC24BEB5607629A867 /* Pods-Plant GeniusTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,9 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB18FAAC2566F0BC0036E33F /* Build configuration list for PBXNativeTarget "Plant Genius" */;
 			buildPhases = (
+				ED5A0AFA96ECEE98AFA5A309 /* [CP] Check Pods Manifest.lock */,
 				EB18FA7E2566F0BA0036E33F /* Sources */,
 				EB18FA7F2566F0BA0036E33F /* Frameworks */,
 				EB18FA802566F0BA0036E33F /* Resources */,
+				60F7F46B8E8DF07BFC1EF9A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB18FAAF2566F0BC0036E33F /* Build configuration list for PBXNativeTarget "Plant GeniusTests" */;
 			buildPhases = (
+				0E593ED9CB55443429D3F375 /* [CP] Check Pods Manifest.lock */,
 				EB18FA942566F0BC0036E33F /* Sources */,
 				EB18FA952566F0BC0036E33F /* Frameworks */,
 				EB18FA962566F0BC0036E33F /* Resources */,
@@ -201,9 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB18FAB22566F0BC0036E33F /* Build configuration list for PBXNativeTarget "Plant GeniusUITests" */;
 			buildPhases = (
+				A2359152D8B5E3C6708AC2E8 /* [CP] Check Pods Manifest.lock */,
 				EB18FA9F2566F0BC0036E33F /* Sources */,
 				EB18FAA02566F0BC0036E33F /* Frameworks */,
 				EB18FAA12566F0BC0036E33F /* Resources */,
+				FE2F8E19ACF8BAD00AEE6049 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,6 +314,7 @@
 				EB18FA922566F0BC0036E33F /* LaunchScreen.storyboard in Resources */,
 				EB18FA8F2566F0BC0036E33F /* Preview Assets.xcassets in Resources */,
 				EB18FA8C2566F0BC0036E33F /* Assets.xcassets in Resources */,
+				EB3F3B48257EC4B90026AE60 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +333,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E593ED9CB55443429D3F375 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Plant GeniusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60F7F46B8E8DF07BFC1EF9A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Plant Genius/Pods-Plant Genius-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Plant Genius/Pods-Plant Genius-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Plant Genius/Pods-Plant Genius-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2359152D8B5E3C6708AC2E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Plant Genius-Plant GeniusUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED5A0AFA96ECEE98AFA5A309 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Plant Genius-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE2F8E19ACF8BAD00AEE6049 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Plant Genius-Plant GeniusUITests/Pods-Plant Genius-Plant GeniusUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Plant Genius-Plant GeniusUITests/Pods-Plant Genius-Plant GeniusUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Plant Genius-Plant GeniusUITests/Pods-Plant Genius-Plant GeniusUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EB18FA7E2566F0BA0036E33F /* Sources */ = {
@@ -460,6 +612,7 @@
 		};
 		EB18FAAD2566F0BC0036E33F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FEEC576C28921FBC7E5DCA5 /* Pods-Plant Genius.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -480,6 +633,7 @@
 		};
 		EB18FAAE2566F0BC0036E33F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96B62DCC186CF5854A7285FC /* Pods-Plant Genius.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -500,6 +654,7 @@
 		};
 		EB18FAB02566F0BC0036E33F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FE0BE6F349C31CE3BA68839 /* Pods-Plant GeniusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -522,6 +677,7 @@
 		};
 		EB18FAB12566F0BC0036E33F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6C05BEC24BEB5607629A867 /* Pods-Plant GeniusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -544,6 +700,7 @@
 		};
 		EB18FAB32566F0BC0036E33F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EC8E68BD3B5B180DF313D81 /* Pods-Plant Genius-Plant GeniusUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -564,6 +721,7 @@
 		};
 		EB18FAB42566F0BC0036E33F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCC5B69561D25C75D9F65C20 /* Pods-Plant Genius-Plant GeniusUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
