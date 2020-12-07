@@ -14,6 +14,11 @@ struct PlantImage: Identifiable {
     var image: Image
 }
 
+enum MediaType {
+    case Picker
+    case Camera
+}
+
 class PlantImages: ObservableObject {
     @Published var images: [PlantImage] = [PlantImage]();
     
@@ -30,6 +35,7 @@ struct PlantDetailView: View {
     var plant: Plant
     @State var image: Image? = nil
     @State var showCaptureImageView: Bool = false
+    @State var mediaType: MediaType
     @ObservedObject var listOfPlantImages: PlantImages = PlantImages(images: [])
 
     var body: some View {
@@ -51,15 +57,26 @@ struct PlantDetailView: View {
                         Spacer()
                     }
                 }
-                Button(action: {
-                  self.showCaptureImageView.toggle()
-                }) {
-                  Text("Take picture")
-                }
+                HStack(spacing: 50) {
+                    Button(action: {
+                        mediaType = .Camera
+                        self.showCaptureImageView.toggle()
+                    }) {
+                        Image(systemName: "camera").resizable()
+                            .frame(width: CGFloat(30), height: CGFloat(25))
+                    }
+                    Button(action: {
+                        mediaType = .Picker
+                        self.showCaptureImageView.toggle()
+                    }) {
+                        Image(systemName: "photo").resizable()
+                            .frame(width: CGFloat(30), height: CGFloat(25))
+                    }
+                }.padding(.bottom, 20)
               }
               if (showCaptureImageView) {
                 Print("iz: before CaptureImageView with showCaptureImageView of \(showCaptureImageView)")
-                CaptureImageView(isShown: $showCaptureImageView, image: $image, listOfPlantImages: listOfPlantImages, plant: plant)
+                CaptureImageView(isShown: $showCaptureImageView, image: $image, listOfPlantImages: listOfPlantImages, plant: plant, mediaType: mediaType)
               }
             }
         }.navigationBarTitle(Text(plant.name!))
@@ -72,6 +89,7 @@ struct CaptureImageView {
     @Binding var image: Image?
     @ObservedObject var listOfPlantImages: PlantImages
     var plant: Plant
+    var mediaType: MediaType
   
     func makeCoordinator() -> Coordinator {
         return Coordinator(isShown: $isShown, image: $image, listOfPlantImages: listOfPlantImages, plant: plant)
@@ -82,7 +100,11 @@ extension CaptureImageView: UIViewControllerRepresentable {
     func makeUIViewController(context: UIViewControllerRepresentableContext<CaptureImageView>) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
-        picker.sourceType = .camera
+        if mediaType == .Camera {
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
         return picker
     }
 

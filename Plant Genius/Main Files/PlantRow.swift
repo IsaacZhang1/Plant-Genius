@@ -18,13 +18,9 @@ struct PlantRow: View {
 
   var body: some View {
     VStack(alignment: .leading) {
-        NavigationLink(destination: PlantDetailView(plant: plant)) {
+        NavigationLink(destination: PlantDetailView(plant: plant, mediaType: .Camera)) {
             plant.name.map(Text.init)
-              .font(.caption)
-            HStack {
-              plant.date_added.map { Text(Self.releaseFormatter.string(from: $0)) }
-                .font(.caption)
-            }
+                .font(.headline)
         }
     }
   }
