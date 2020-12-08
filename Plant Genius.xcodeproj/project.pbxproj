@@ -20,6 +20,10 @@
 		EB18FAB625692FDD0036E33F /* PlantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FAB525692FDD0036E33F /* PlantDetailView.swift */; };
 		EB18FAB8256935100036E33F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB18FAB7256935100036E33F /* Coordinator.swift */; };
 		EB3F3B48257EC4B90026AE60 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB3F3B47257EC4B90026AE60 /* Auth0.plist */; };
+		EB3F3B69257F07080026AE60 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F3B68257F07080026AE60 /* LoginView.swift */; };
+		EB3F3B74257F0A5A0026AE60 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F3B73257F0A5A0026AE60 /* SessionManager.swift */; };
+		EB3F3B7C257F0B1A0026AE60 /* AlertController+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F3B7B257F0B1A0026AE60 /* AlertController+Convenience.swift */; };
+		EB3F3B81257F1B300026AE60 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F3B80257F1B300026AE60 /* HomeViewController.swift */; };
 		EB7A165C2579BB1A00A80919 /* PlantList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB7A165A2579BB1A00A80919 /* PlantList.xcdatamodeld */; };
 		EB7A16622579C01400A80919 /* PlantRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A16612579C01400A80919 /* PlantRow.swift */; };
 		EB7A166A2579C12200A80919 /* AddPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A16692579C12200A80919 /* AddPlant.swift */; };
@@ -70,6 +74,10 @@
 		EB18FAB525692FDD0036E33F /* PlantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailView.swift; sourceTree = "<group>"; };
 		EB18FAB7256935100036E33F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EB3F3B47257EC4B90026AE60 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		EB3F3B68257F07080026AE60 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EB3F3B73257F0A5A0026AE60 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		EB3F3B7B257F0B1A0026AE60 /* AlertController+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertController+Convenience.swift"; sourceTree = "<group>"; };
+		EB3F3B80257F1B300026AE60 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EB7A165B2579BB1A00A80919 /* PlantList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlantList.xcdatamodel; sourceTree = "<group>"; };
 		EB7A16612579C01400A80919 /* PlantRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRow.swift; sourceTree = "<group>"; };
 		EB7A16692579C12200A80919 /* AddPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlant.swift; sourceTree = "<group>"; };
@@ -138,9 +146,11 @@
 		EB18FA842566F0BA0036E33F /* Plant Genius */ = {
 			isa = PBXGroup;
 			children = (
+				EB3F3B67257F06F70026AE60 /* Authentication */,
 				EB7A16742579C4F800A80919 /* Main Files */,
 				EB18FA852566F0BA0036E33F /* AppDelegate.swift */,
 				EB18FA872566F0BA0036E33F /* SceneDelegate.swift */,
+				EB3F3B80257F1B300026AE60 /* HomeViewController.swift */,
 				EB18FAB7256935100036E33F /* Coordinator.swift */,
 				EB7A165A2579BB1A00A80919 /* PlantList.xcdatamodeld */,
 				EB18FA8B2566F0BC0036E33F /* Assets.xcassets */,
@@ -176,6 +186,16 @@
 				EB18FAA92566F0BC0036E33F /* Info.plist */,
 			);
 			path = "Plant GeniusUITests";
+			sourceTree = "<group>";
+		};
+		EB3F3B67257F06F70026AE60 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				EB3F3B68257F07080026AE60 /* LoginView.swift */,
+				EB3F3B73257F0A5A0026AE60 /* SessionManager.swift */,
+				EB3F3B7B257F0B1A0026AE60 /* AlertController+Convenience.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		EB7A16742579C4F800A80919 /* Main Files */ = {
@@ -442,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3F3B69257F07080026AE60 /* LoginView.swift in Sources */,
 				EB18FA862566F0BA0036E33F /* AppDelegate.swift in Sources */,
 				EB7A166A2579C12200A80919 /* AddPlant.swift in Sources */,
 				EB18FAB625692FDD0036E33F /* PlantDetailView.swift in Sources */,
@@ -449,7 +470,10 @@
 				EB18FAB8256935100036E33F /* Coordinator.swift in Sources */,
 				EB7A165C2579BB1A00A80919 /* PlantList.xcdatamodeld in Sources */,
 				EB18FA882566F0BA0036E33F /* SceneDelegate.swift in Sources */,
+				EB3F3B7C257F0B1A0026AE60 /* AlertController+Convenience.swift in Sources */,
+				EB3F3B74257F0A5A0026AE60 /* SessionManager.swift in Sources */,
 				EB18FA8A2566F0BA0036E33F /* PlantList.swift in Sources */,
+				EB3F3B81257F1B300026AE60 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

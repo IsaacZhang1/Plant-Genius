@@ -4,6 +4,19 @@
 <dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Plant Genius requires access to your phone’s camera to store pictures of plants.</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+	    <dict>
+	        <key>CFBundleTypeRole</key>
+	        <string>None</string>
+	        <key>CFBundleURLName</key>
+	        <string>auth0</string>
+	        <key>CFBundleURLSchemes</key>
+	        <array>
+	            <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	        </array>
+	    </dict>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
