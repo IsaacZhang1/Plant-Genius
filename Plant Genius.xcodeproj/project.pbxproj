@@ -27,6 +27,7 @@
 		EB7A165C2579BB1A00A80919 /* PlantList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB7A165A2579BB1A00A80919 /* PlantList.xcdatamodeld */; };
 		EB7A16622579C01400A80919 /* PlantRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A16612579C01400A80919 /* PlantRow.swift */; };
 		EB7A166A2579C12200A80919 /* AddPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A16692579C12200A80919 /* AddPlant.swift */; };
+		EBBC1A702582DAAB00637A75 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC1A6F2582DAAB00637A75 /* SplashView.swift */; };
 		FD443820010281F6CF6C2FFB /* Pods_Plant_GeniusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA74408397B663092FCA6D /* Pods_Plant_GeniusTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		EB7A165B2579BB1A00A80919 /* PlantList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlantList.xcdatamodel; sourceTree = "<group>"; };
 		EB7A16612579C01400A80919 /* PlantRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRow.swift; sourceTree = "<group>"; };
 		EB7A16692579C12200A80919 /* AddPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlant.swift; sourceTree = "<group>"; };
+		EBBC1A6F2582DAAB00637A75 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				EB3F3B68257F07080026AE60 /* LoginView.swift */,
 				EB3F3B73257F0A5A0026AE60 /* SessionManager.swift */,
 				EB3F3B7B257F0B1A0026AE60 /* AlertController+Convenience.swift */,
+				EBBC1A6F2582DAAB00637A75 /* SplashView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				EB18FAB8256935100036E33F /* Coordinator.swift in Sources */,
 				EB7A165C2579BB1A00A80919 /* PlantList.xcdatamodeld in Sources */,
 				EB18FA882566F0BA0036E33F /* SceneDelegate.swift in Sources */,
+				EBBC1A702582DAAB00637A75 /* SplashView.swift in Sources */,
 				EB3F3B7C257F0B1A0026AE60 /* AlertController+Convenience.swift in Sources */,
 				EB3F3B74257F0A5A0026AE60 /* SessionManager.swift in Sources */,
 				EB18FA8A2566F0BA0036E33F /* PlantList.swift in Sources */,

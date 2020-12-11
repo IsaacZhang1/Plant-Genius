@@ -13,22 +13,25 @@ import Auth0
 
 struct LoginView: View {
     @ObservedObject var userInfo: UserInformation
-    
+    let credentialsManager = CredentialsManager(authentication: Auth0.authentication())
+
     var body: some View {
         NavigationView {
             VStack {
                 Button(action: {
-                    showLock()
+                    self.checkAccessToken()
                 }) {
                     Text("Login")
                 }
             }
         }
+        .onAppear {
+            print("LoginView appeared!")
+        }
     }
     
     fileprivate func showLock() {
-        guard let clientInfo = plistValues(bundle: Bundle.main) else { return }
-        print("the profile before is: \(SessionManager.shared.profile)")
+        print("the profile before is: \(String(describing: SessionManager.shared.profile))")
         Auth0
             .webAuth()
             .scope("openid profile")
@@ -36,23 +39,19 @@ struct LoginView: View {
             .start { result in
                 switch result {
                 case .failure(let error):
-                    // Handle the error
                     print("Error: \(error)")
                 case .success(let credentials):
-                    // Do something with credentials e.g.: save them.
-                    // Auth0 will automatically dismiss the login page
-                    print("Credentials: \(credentials)")
+                    print("about to store credentials with accessToken of \(credentials.accessToken)")
                     guard let accessToken = credentials.accessToken, let idToken = credentials.idToken else { return }
                     SessionManager.shared.storeTokens(accessToken, idToken: idToken)
                     SessionManager.shared.retrieveProfile { error in
-                        print("Profile is: \(SessionManager.shared.profile)")
                         guard error == nil else {
+                            print("the error in showLock is: \(error)")
                             return self.showLock()
                         }
                         DispatchQueue.main.async {
-                            print("Setting userInfo is: \(SessionManager.shared.profile)")
+                            print("Setting userInfo in showLock: \(String(describing: SessionManager.shared.profile))")
                             userInfo.currentUserInfo = SessionManager.shared.profile
-//                            self.performSegue(withIdentifier: "ShowProfileNonAnimated", sender: nil)
                         }
                     }
                 }
@@ -60,15 +59,17 @@ struct LoginView: View {
     }
     
     fileprivate func checkAccessToken() {
-//        let loadingAlert = UIAlertController.loadingAlert()
-//        loadingAlert.presentInViewController(viewController: self)
         SessionManager.shared.retrieveProfile { error in
             DispatchQueue.main.async {
+                print("the profile is: \(SessionManager.shared.profile)")
+                print("the error is: \(String(describing: error))")
                 guard error == nil else {
+//                    return
                     return self.showLock()
                 }
-                
                /** TODO: set the authenticated status to true */
+                userInfo.currentUserInfo = SessionManager.shared.profile
+
             }
         }
     }

@@ -16,13 +16,44 @@ class UserInformation: ObservableObject {
 
 struct HomeViewController: View {
     @ObservedObject var userInfo: UserInformation = UserInformation()
+    @State var showSplashView = true
     
     var body: some View {
-        if userInfo.currentUserInfo == nil {
-            LoginView(userInfo: userInfo)
-        } else {
-            PlantList()
+        NavigationView {
+            if self.showSplashView == true {
+                Print("inside showSplashView")
+                SplashView()
+            }
+            else if userInfo.currentUserInfo == nil {
+                Print("inside userInfo == nil")
+                LoginView(userInfo: userInfo)
+//                SplashView()
+            } else {
+                Print("inside HomeViewController PlantList")
+                PlantList(userInfo: userInfo)
+            }
+        }.onAppear {
+            self.checkToken() {
+                self.showSplashView = false
+                userInfo.currentUserInfo = nil
+            }
+            print("HomeViewController appeared!")
         }
+    }
+    
+    fileprivate func checkToken(callback: @escaping () -> Void) {
+        SessionManager.shared.retrieveProfile { error in
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    print("Failed to retrieve profile: \(String(describing: error))")
+                    return callback()
+                }
+                print("iz: inside checkToken with successful retreival: \(SessionManager.shared.profile?.name)")
+                self.showSplashView = false
+                self.userInfo.currentUserInfo = SessionManager.shared.profile
+            }
+        }
+           
     }
 }
 
@@ -33,3 +64,4 @@ struct HomeViewController_Previews: PreviewProvider {
         HomeViewController()
     }
 }
+
