@@ -51,9 +51,15 @@ class SessionManager {
         return roles
     }
 
-    func logout() {
+    
+    func logout(_ callback: @escaping () -> Void) {
+          // Remove credentials from KeyChain
         self.keychain.clearAll()
-    }
+        callback()
+      }
+//    func logout() {
+//        self.keychain.clearAll()
+//    }
 
 }
 
