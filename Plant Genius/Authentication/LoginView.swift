@@ -25,9 +25,6 @@ struct LoginView: View {
                 }
             }
         }
-        .onAppear {
-            print("LoginView appeared!")
-        }
     }
     
     fileprivate func showLock() {
@@ -41,7 +38,6 @@ struct LoginView: View {
                 case .failure(let error):
                     print("Error: \(error)")
                 case .success(let credentials):
-                    print("about to store credentials with accessToken of \(credentials.accessToken)")
                     guard let accessToken = credentials.accessToken, let idToken = credentials.idToken else { return }
                     SessionManager.shared.storeTokens(accessToken, idToken: idToken)
                     SessionManager.shared.retrieveProfile { error in
@@ -50,7 +46,6 @@ struct LoginView: View {
                             return self.showLock()
                         }
                         DispatchQueue.main.async {
-                            print("Setting userInfo in showLock: \(String(describing: SessionManager.shared.profile))")
                             userInfo.currentUserInfo = SessionManager.shared.profile
                         }
                     }
@@ -61,8 +56,6 @@ struct LoginView: View {
     fileprivate func checkAccessToken() {
         SessionManager.shared.retrieveProfile { error in
             DispatchQueue.main.async {
-                print("the profile is: \(SessionManager.shared.profile)")
-                print("the error is: \(String(describing: error))")
                 guard error == nil else {
 //                    return
                     return self.showLock()

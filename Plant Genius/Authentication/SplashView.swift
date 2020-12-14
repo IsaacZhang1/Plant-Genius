@@ -10,7 +10,9 @@ import SwiftUI
 
 struct SplashView: View {
     var body: some View {
-        Text("Daily Plant Logger")
+        VStack {
+            Image(systemName: "heart.fill")
+        }
     }
 }
 

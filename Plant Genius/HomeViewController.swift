@@ -11,13 +11,12 @@ import Auth0
 
 class UserInformation: ObservableObject {
     @Published var currentUserInfo: UserInfo?
-    var showSplashView: Bool?
+    var showSplashView: Bool = true
 
 }
 
 struct HomeViewController: View {
     @ObservedObject var userInfo: UserInformation = UserInformation()
-//    @State var showSplashView = true
     
     init() {
         checkToken()
@@ -25,28 +24,24 @@ struct HomeViewController: View {
     
     var body: some View {
         if self.userInfo.showSplashView == true {
-            Print("inside showSplashView")
             SplashView()
-        }
-        else if userInfo.currentUserInfo == nil {
-            Print("inside userInfo == nil")
+        } else if userInfo.currentUserInfo == nil {
             LoginView(userInfo: userInfo)
         } else {
-            Print("inside HomeViewController PlantList")
             PlantList(userInfo: userInfo)
         }
     }
     
     fileprivate func checkToken() {
-        userInfo.showSplashView = false
         SessionManager.shared.retrieveProfile { error in
             DispatchQueue.main.async {
                 guard error == nil else {
                     print("Failed to retrieve profile: \(String(describing: error))")
                     userInfo.currentUserInfo = nil
+                    userInfo.showSplashView = false
                     return
                 }
-                print("iz: inside checkToken with successful retreival: \(SessionManager.shared.profile?.name)")
+                userInfo.showSplashView = false
                 self.userInfo.currentUserInfo = SessionManager.shared.profile
             }
         }
