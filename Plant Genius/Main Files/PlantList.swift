@@ -38,13 +38,7 @@ struct PlantList: View {
     
     var body: some View {
         TabView {
-            VStack {
-//                HStack {
-//                    Text("Hello World")
-//                    Button(action: { self.isPresented.toggle() }) {
-//                        Image(systemName: "plus")
-//                    }.frame(width: 50, height: 50)
-//                }
+            NavigationView {
                 List {
                     ForEach(plants, id: \.name) {
                         PlantRow(plant: $0)
@@ -57,35 +51,17 @@ struct PlantList: View {
                         self.isPresented = false
                     }
                 }
+                .navigationBarTitle(Text("My Plants"))
+                .navigationBarItems(trailing:
+                                        Button(action: { self.isPresented.toggle() }) {
+                                            Image(systemName: "plus")
+                                        }.frame(width: 50, height: 50)
+                )
             }
-            .tabItem {
+           .tabItem {
                 Image(systemName: "1.circle")
                 Text("My Plants")
             }.tag(0)
-//            NavigationView {
-//                List {
-//                    ForEach(plants, id: \.name) {
-//                        PlantRow(plant: $0)
-//                    }
-//                    .onDelete(perform: deletePlant)
-//                }
-//                .sheet(isPresented: $isPresented) {
-//                    AddPlant { name, date_added in
-//                        self.addPlant(name: name, date_added: date_added)
-//                        self.isPresented = false
-//                    }
-//                }
-//                .navigationBarTitle(Text("My Plants"))
-//                .navigationBarItems(trailing:
-//                                        Button(action: { self.isPresented.toggle() }) {
-//                                            Image(systemName: "plus")
-//                                        }.frame(width: 50, height: 50)
-//                )
-//            }
-//           .tabItem {
-//                Image(systemName: "1.circle")
-//                Text("My Plants")
-//            }.tag(0)
             
             NavigationView {
                 List {
