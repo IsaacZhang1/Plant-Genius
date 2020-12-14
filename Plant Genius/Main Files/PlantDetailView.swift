@@ -76,7 +76,10 @@ struct PlantDetailView: View {
               }
               if (showCaptureImageView) {
                 Print("iz: before CaptureImageView with showCaptureImageView of \(showCaptureImageView)")
-                CaptureImageView(isShown: $showCaptureImageView, image: $image, listOfPlantImages: listOfPlantImages, plant: plant, mediaType: mediaType)
+                CaptureImageView(isShown: $showCaptureImageView, image: $image, mediaType: mediaType) { returnedImage in
+                    let day = String(listOfPlantImages.images.count)
+                    listOfPlantImages.images.append(PlantImage(name: "Day " + day, image: returnedImage))
+                }
               }
             }
         }.navigationBarTitle(Text(plant.name!))
@@ -87,12 +90,11 @@ struct PlantDetailView: View {
 struct CaptureImageView {
     @Binding var isShown: Bool
     @Binding var image: Image?
-    @ObservedObject var listOfPlantImages: PlantImages
-    var plant: Plant
     var mediaType: MediaType
+    var callback : ((Image)->(Void))?
   
     func makeCoordinator() -> Coordinator {
-        return Coordinator(isShown: $isShown, image: $image, listOfPlantImages: listOfPlantImages, plant: plant)
+        return Coordinator(isShown: $isShown, image: $image, callback: callback)
     }
 }
 
