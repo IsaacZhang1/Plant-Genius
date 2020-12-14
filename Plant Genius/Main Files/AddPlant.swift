@@ -29,12 +29,13 @@ struct AddPlant: View {
           }
         }
         Section {
-          Button(action: addPlantAction) {
-            Text("Add Plant")
-          }
+          
         }
       }
       .navigationBarTitle(Text("Add Plant"), displayMode: .inline)
+      .navigationBarItems(trailing: Button(action: addPlantAction) {
+                                        Text("Add")
+                                    })
     }
   }
 
