@@ -11,8 +11,6 @@ import UIKit
 import SwiftUI
 
 func saveImage(imageName: String, image: Image) {
-    print("iz: inside saveImage with imageName of: \(imageName)")
-
     guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
 
     let fileName = imageName

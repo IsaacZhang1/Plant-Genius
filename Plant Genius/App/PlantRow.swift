@@ -21,12 +21,17 @@ struct PlantRow: View {
 
     var body: some View {
         NavigationLink(destination: PlantDetailView(plant: plant, mediaType: .Camera)) {
-            HStack {
+            HStack(spacing: 25) {
                 coverImage?
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .scaledToFit()
-                    .frame(width: 100, height: 100)
+                    .frame(width: 75, height: 75)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                    .shadow(radius: 10)
+                    .padding(.top, 10)
+                    .padding(.bottom, 10)
                 plant.name.map(Text.init)
                     .font(.headline)
                 

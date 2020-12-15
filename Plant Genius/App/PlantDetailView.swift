@@ -87,38 +87,3 @@ struct PlantDetailView: View {
 }
 
 
-struct CaptureImageView {
-    @Binding var isShown: Bool
-    var mediaType: MediaType
-    var callback : ((Image)->(Void))?
-  
-    func makeCoordinator() -> ImageCoordinator {
-        return Coordinator(isShown: $isShown, callback: callback)
-    }
-}
-
-extension CaptureImageView: UIViewControllerRepresentable {
-    func makeUIViewController(context: UIViewControllerRepresentableContext<CaptureImageView>) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.delegate = context.coordinator
-        if mediaType == .Camera {
-            picker.sourceType = .camera
-        } else {
-            picker.sourceType = .photoLibrary
-        }
-        return picker
-    }
-
-    func updateUIViewController(_ uiViewController: UIImagePickerController,
-                              context: UIViewControllerRepresentableContext<CaptureImageView>) {
-
-    }
-}
-
-
-extension View {
-    func Print(_ vars: Any...) -> some View {
-        for v in vars { print(v) }
-        return EmptyView()
-    }
-}
