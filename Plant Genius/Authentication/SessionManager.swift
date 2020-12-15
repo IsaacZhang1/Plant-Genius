@@ -57,9 +57,6 @@ class SessionManager {
         self.keychain.clearAll()
         callback()
       }
-//    func logout() {
-//        self.keychain.clearAll()
-//    }
 
 }
 

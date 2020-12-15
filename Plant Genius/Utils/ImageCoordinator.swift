@@ -1,15 +1,15 @@
 import SwiftUI
 
-class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class ImageCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var isCoordinatorShown: Bool
-    @Binding var imageInCoordinator: Image?
+    var imageInCoordinator: Image?
     var callback: ((Image)->(Void))?
     
-    init(isShown: Binding<Bool>, image: Binding<Image?>, callback: ((Image)->(Void))?) {
+    init(isShown: Binding<Bool>, callback: ((Image)->(Void))?) {
         _isCoordinatorShown = isShown
-        _imageInCoordinator = image
+        self.imageInCoordinator = nil
         self.callback = callback
     }
     
@@ -18,8 +18,6 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
         guard let unwrapImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
         imageInCoordinator = Image(uiImage: unwrapImage)
         if let image = imageInCoordinator {
-//            let day = String(listOfPlantImages.images.count)
-//            listOfPlantImages.images.append(PlantImage(name: "Day " + day, image: image))
             if let callback = callback {
                 callback(image)
             }

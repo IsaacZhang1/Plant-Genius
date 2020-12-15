@@ -46,8 +46,8 @@ struct PlantList: View {
                     .onDelete(perform: deletePlant)
                 }
                 .sheet(isPresented: $isPresented) {
-                    AddPlant { name, date_added in
-                        self.addPlant(name: name, date_added: date_added)
+                    AddPlant { name, date_added, image in
+                        self.addPlant(name: name, date_added: date_added, image: image)
                         self.isPresented = false
                     }
                 }
@@ -93,10 +93,11 @@ struct PlantList: View {
     }
     
     
-    func addPlant(name: String, date_added: Date) {
+    func addPlant(name: String, date_added: Date, image: String?) {
         let newPlant = Plant(context: managedObjectContext)
         newPlant.name = name
         newPlant.date_added = Date()
+        /* TODO: add image to Plant core data */
         
         saveContext()
     }

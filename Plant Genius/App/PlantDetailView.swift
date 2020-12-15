@@ -76,7 +76,7 @@ struct PlantDetailView: View {
               }
               if (showCaptureImageView) {
                 Print("iz: before CaptureImageView with showCaptureImageView of \(showCaptureImageView)")
-                CaptureImageView(isShown: $showCaptureImageView, image: $image, mediaType: mediaType) { returnedImage in
+                CaptureImageView(isShown: $showCaptureImageView, mediaType: mediaType) { returnedImage in
                     let day = String(listOfPlantImages.images.count)
                     listOfPlantImages.images.append(PlantImage(name: "Day " + day, image: returnedImage))
                 }
@@ -89,12 +89,11 @@ struct PlantDetailView: View {
 
 struct CaptureImageView {
     @Binding var isShown: Bool
-    @Binding var image: Image?
     var mediaType: MediaType
     var callback : ((Image)->(Void))?
   
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(isShown: $isShown, image: $image, callback: callback)
+    func makeCoordinator() -> ImageCoordinator {
+        return Coordinator(isShown: $isShown, callback: callback)
     }
 }
 
