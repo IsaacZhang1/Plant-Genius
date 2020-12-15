@@ -20,24 +20,24 @@ struct PlantRow: View {
     
 
     var body: some View {
-        VStack(alignment: .leading) {
-            NavigationLink(destination: PlantDetailView(plant: plant, mediaType: .Camera)) {
-                HStack {
-                    Text("Hello World")
-                    plant.name.map(Text.init)
-                        .font(.headline)
-                    coverImage?
-                        .renderingMode(.original)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 75, height:75, alignment: .center)
+        NavigationLink(destination: PlantDetailView(plant: plant, mediaType: .Camera)) {
+            HStack {
+                coverImage?
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .scaledToFit()
+                    .frame(width: 100, height: 100)
+                plant.name.map(Text.init)
+                    .font(.headline)
+                
+            }
+            .onAppear() {
+                if let name = plant.name {
+                    loadImageFromDiskWith(fileName: name, callback: setImage)
                 }
             }
-        }.onAppear() {
-            if let name = plant.name {
-                loadImageFromDiskWith(fileName: name, callback: setImage)
-            }
         }
+
     }
     
     func setImage(image: Image?) {
