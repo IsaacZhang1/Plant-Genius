@@ -11,13 +11,10 @@ import SwiftUI
 struct MenuView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Image(systemName: "person")
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Text("Profile")
-                    .foregroundColor(.gray)
-                    .font(.headline)
+            NavigationLink(destination: ProfileView()) {
+                HStack(spacing: 25) {
+                    Text("Profile View")
+                }
             }
             .padding(.top, 100)
             HStack {

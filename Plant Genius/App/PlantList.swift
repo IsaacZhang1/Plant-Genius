@@ -28,9 +28,18 @@ struct PlantList: View {
     init(userInfo: UserInformation) {
         self.userInfo = userInfo
     }
+    
 
     
     var body: some View {
+        let drag = DragGesture()
+            .onEnded {
+                if $0.translation.width < -100 {
+                    withAnimation {
+                        self.showMenu = false
+                    }
+                }
+            }
         ZStack(alignment: .leading) {
             GeometryReader { geometry in
                 NavigationView {
@@ -46,13 +55,7 @@ struct PlantList: View {
                             self.isPresented = false
                         }
                     }
-                    .onTapGesture {
-                        if self.showMenu {
-                            withAnimation {
-                                self.showMenu = false
-                            }
-                        }
-                    }
+                    .disabled(self.showMenu == true)
                     .navigationBarTitle(Text("My Plants"))
                     .navigationBarItems(leading:
                                             Button(action: {
@@ -66,9 +69,12 @@ struct PlantList: View {
                                         trailing:
                                             Button(action: { self.isPresented.toggle() }) {
                                                 Image(systemName: "plus")
-                                            }.frame(width: 50, height: 50)
+                                            }
+                                            .frame(width: 50, height: 50)
+                                            .disabled(self.showMenu == true)
                     )
                 }
+                .gesture(drag)
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 if self.showMenu {
                     MenuView()

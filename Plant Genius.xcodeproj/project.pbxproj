@@ -30,6 +30,7 @@
 		EBBC1A702582DAAB00637A75 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC1A6F2582DAAB00637A75 /* SplashView.swift */; };
 		EBBC1A852587F88500637A75 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC1A842587F88500637A75 /* Utils.swift */; };
 		EBBC1A922589BB8A00637A75 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC1A912589BB8A00637A75 /* MenuView.swift */; };
+		EBBC1A972589C62200637A75 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC1A962589C62200637A75 /* ProfileView.swift */; };
 		FD443820010281F6CF6C2FFB /* Pods_Plant_GeniusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA74408397B663092FCA6D /* Pods_Plant_GeniusTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		EBBC1A6F2582DAAB00637A75 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		EBBC1A842587F88500637A75 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		EBBC1A912589BB8A00637A75 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		EBBC1A962589C62200637A75 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				EB18FAB525692FDD0036E33F /* PlantDetailView.swift */,
 				EB18FA892566F0BA0036E33F /* PlantList.swift */,
 				EB7A16612579C01400A80919 /* PlantRow.swift */,
+				EBBC1A962589C62200637A75 /* ProfileView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				EB7A16622579C01400A80919 /* PlantRow.swift in Sources */,
 				EB18FAB8256935100036E33F /* ImageCoordinator.swift in Sources */,
 				EB7A165C2579BB1A00A80919 /* PlantList.xcdatamodeld in Sources */,
+				EBBC1A972589C62200637A75 /* ProfileView.swift in Sources */,
 				EB18FA882566F0BA0036E33F /* SceneDelegate.swift in Sources */,
 				EBBC1A702582DAAB00637A75 /* SplashView.swift in Sources */,
 				EBBC1A922589BB8A00637A75 /* MenuView.swift in Sources */,
