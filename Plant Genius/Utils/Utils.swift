@@ -28,7 +28,6 @@ func saveImage(imageName: String, image: Image) {
         }
 
     }
-    print("iz: inside saveImage with fileURL of: \(fileURL)")
     do {
         try data.write(to: fileURL)
     } catch let error {
@@ -49,7 +48,6 @@ func loadImageFromDiskWith(fileName: String, callback: @escaping (Image?)->(Void
 
         if let dirPath = paths.first {
             let imageUrl = URL(fileURLWithPath: dirPath).appendingPathComponent(fileName)
-            print("in loadImageFromDisk with imageURL.path of \(imageUrl.path)")
             let image = UIImage(contentsOfFile: imageUrl.path)
             if let unwrappedImage = image {
                 callback(Image(uiImage: unwrappedImage))

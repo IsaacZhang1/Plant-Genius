@@ -26,9 +26,6 @@ class PlantImages: ObservableObject {
         self.images = images
     }
     
-    func printImages() {
-        print("the images are: \(images)")
-    }
 }
 
 struct PlantDetailView: View {
@@ -75,7 +72,6 @@ struct PlantDetailView: View {
                 }.padding(.bottom, 20)
               }
               if (showCaptureImageView) {
-                Print("iz: before CaptureImageView with showCaptureImageView of \(showCaptureImageView)")
                 CaptureImageView(isShown: $showCaptureImageView, mediaType: mediaType) { returnedImage in
                     let day = String(listOfPlantImages.images.count)
                     listOfPlantImages.images.append(PlantImage(name: "Day " + day, image: returnedImage))

@@ -45,9 +45,7 @@ struct AddPlant: View {
                     Text("Add")
                 })
                 if (showCaptureImageView) {
-                    Print("iz: before CaptureImageView with showCaptureImageView of \(showCaptureImageView)")
                     CaptureImageView(isShown: $showCaptureImageView, mediaType: .Camera) { returnedImage in
-                        Print("iz: the returned image is: \(returnedImage)")
                         saveImage(imageName: name, image: returnedImage)
                     }
                 }

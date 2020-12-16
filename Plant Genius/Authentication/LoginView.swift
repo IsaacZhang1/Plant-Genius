@@ -28,7 +28,6 @@ struct LoginView: View {
     }
     
     fileprivate func showLock() {
-        print("the profile before is: \(String(describing: SessionManager.shared.profile))")
         Auth0
             .webAuth()
             .scope("openid profile")

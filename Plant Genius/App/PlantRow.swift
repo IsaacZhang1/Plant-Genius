@@ -37,7 +37,6 @@ struct PlantRow: View {
                 
             }
             .onAppear() {
-                Print("iz: the coverImage is \(coverImage)")
                 if let name = plant.name, coverImage == nil {
                     loadImageFromDiskWith(fileName: name, callback: setImage)
                 }
